@@ -102,6 +102,16 @@ class Database {
     return this.models.libraryItem
   }
 
+  /** @type {typeof import('./models/UserFavorite')} */
+  get userFavoriteModel() {
+    return this.models.userFavorite
+  }
+
+  /** @type {typeof import('./models/PodcastEpisode')} */
+  get podcastEpisodeModel() {
+    return this.models.podcastEpisode
+  }
+
   /** @type {typeof import('./models/MediaProgress')} */
   get mediaProgressModel() {
     return this.models.mediaProgress
@@ -324,6 +334,7 @@ class Database {
     require('./models/Podcast').init(this.sequelize)
     require('./models/PodcastEpisode').init(this.sequelize)
     require('./models/LibraryItem').init(this.sequelize)
+    require('./models/UserFavorite').init(this.sequelize)
     require('./models/MediaProgress').init(this.sequelize)
     require('./models/Series').init(this.sequelize)
     require('./models/BookSeries').init(this.sequelize)
